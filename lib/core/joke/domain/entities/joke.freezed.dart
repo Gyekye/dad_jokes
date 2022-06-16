@@ -20,11 +20,8 @@ Joke _$JokeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Joke {
-  String get id => throw _privateConstructorUsedError;
-  String get setUp => throw _privateConstructorUsedError;
-  String get punchLine => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
+  List<JokeBluePrint> get body => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,8 +32,7 @@ mixin _$Joke {
 abstract class $JokeCopyWith<$Res> {
   factory $JokeCopyWith(Joke value, $Res Function(Joke) then) =
       _$JokeCopyWithImpl<$Res>;
-  $Res call(
-      {String id, String setUp, String punchLine, String image, String status});
+  $Res call({String status, List<JokeBluePrint> body});
 }
 
 /// @nodoc
@@ -49,33 +45,18 @@ class _$JokeCopyWithImpl<$Res> implements $JokeCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? id = freezed,
-    Object? setUp = freezed,
-    Object? punchLine = freezed,
-    Object? image = freezed,
     Object? status = freezed,
+    Object? body = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      setUp: setUp == freezed
-          ? _value.setUp
-          : setUp // ignore: cast_nullable_to_non_nullable
-              as String,
-      punchLine: punchLine == freezed
-          ? _value.punchLine
-          : punchLine // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: image == freezed
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<JokeBluePrint>,
     ));
   }
 }
@@ -85,8 +66,7 @@ abstract class _$$_JokeCopyWith<$Res> implements $JokeCopyWith<$Res> {
   factory _$$_JokeCopyWith(_$_Joke value, $Res Function(_$_Joke) then) =
       __$$_JokeCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String id, String setUp, String punchLine, String image, String status});
+  $Res call({String status, List<JokeBluePrint> body});
 }
 
 /// @nodoc
@@ -100,33 +80,18 @@ class __$$_JokeCopyWithImpl<$Res> extends _$JokeCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
-    Object? setUp = freezed,
-    Object? punchLine = freezed,
-    Object? image = freezed,
     Object? status = freezed,
+    Object? body = freezed,
   }) {
     return _then(_$_Joke(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      setUp: setUp == freezed
-          ? _value.setUp
-          : setUp // ignore: cast_nullable_to_non_nullable
-              as String,
-      punchLine: punchLine == freezed
-          ? _value.punchLine
-          : punchLine // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: image == freezed
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
+      body: body == freezed
+          ? _value._body
+          : body // ignore: cast_nullable_to_non_nullable
+              as List<JokeBluePrint>,
     ));
   }
 }
@@ -134,29 +99,23 @@ class __$$_JokeCopyWithImpl<$Res> extends _$JokeCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Joke implements _Joke {
-  const _$_Joke(
-      {required this.id,
-      required this.setUp,
-      required this.punchLine,
-      required this.image,
-      required this.status});
+  const _$_Joke({required this.status, required final List<JokeBluePrint> body})
+      : _body = body;
 
   factory _$_Joke.fromJson(Map<String, dynamic> json) => _$$_JokeFromJson(json);
 
   @override
-  final String id;
-  @override
-  final String setUp;
-  @override
-  final String punchLine;
-  @override
-  final String image;
-  @override
   final String status;
+  final List<JokeBluePrint> _body;
+  @override
+  List<JokeBluePrint> get body {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_body);
+  }
 
   @override
   String toString() {
-    return 'Joke(id: $id, setUp: $setUp, punchLine: $punchLine, image: $image, status: $status)';
+    return 'Joke(status: $status, body: $body)';
   }
 
   @override
@@ -164,22 +123,16 @@ class _$_Joke implements _Joke {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Joke &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.setUp, setUp) &&
-            const DeepCollectionEquality().equals(other.punchLine, punchLine) &&
-            const DeepCollectionEquality().equals(other.image, image) &&
-            const DeepCollectionEquality().equals(other.status, status));
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality().equals(other._body, _body));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(setUp),
-      const DeepCollectionEquality().hash(punchLine),
-      const DeepCollectionEquality().hash(image),
-      const DeepCollectionEquality().hash(status));
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(_body));
 
   @JsonKey(ignore: true)
   @override
@@ -194,24 +147,15 @@ class _$_Joke implements _Joke {
 
 abstract class _Joke implements Joke {
   const factory _Joke(
-      {required final String id,
-      required final String setUp,
-      required final String punchLine,
-      required final String image,
-      required final String status}) = _$_Joke;
+      {required final String status,
+      required final List<JokeBluePrint> body}) = _$_Joke;
 
   factory _Joke.fromJson(Map<String, dynamic> json) = _$_Joke.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
-  @override
-  String get setUp => throw _privateConstructorUsedError;
-  @override
-  String get punchLine => throw _privateConstructorUsedError;
-  @override
-  String get image => throw _privateConstructorUsedError;
-  @override
   String get status => throw _privateConstructorUsedError;
+  @override
+  List<JokeBluePrint> get body => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_JokeCopyWith<_$_Joke> get copyWith => throw _privateConstructorUsedError;

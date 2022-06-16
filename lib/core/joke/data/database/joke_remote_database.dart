@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:dad_jokes/core/error/exception.dart';
 import 'package:dad_jokes/data/api_keys.dart';
-import 'package:dartz/dartz.dart';
 
 import '../../domain/entities/joke.dart';
 import 'package:http/http.dart' as http;
