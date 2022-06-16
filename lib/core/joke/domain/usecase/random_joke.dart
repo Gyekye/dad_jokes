@@ -1,9 +1,9 @@
-import 'package:dad_jokes/core/error/failure.dart';
-import 'package:dad_jokes/core/joke/domain/repositories/joke_repository.dart';
-import 'package:dad_jokes/core/usecase/base_usecase.dart';
 import 'package:dartz/dartz.dart';
 
+import '../../../error/failure.dart';
+import '../../../usecase/base_usecase.dart';
 import '../entities/joke.dart';
+import '../repositories/joke_repository.dart';
 
 /// Usecase for getting a random joke
 class GetRandomJoke extends Usecase<Joke, NoParams> {
@@ -12,7 +12,8 @@ class GetRandomJoke extends Usecase<Joke, NoParams> {
   /// Constructor
   GetRandomJoke(this.repository);
 
-  /// Returns the getRandomJoke contract from JokeRepository
+  /// Returns the getRandomJoke contract from [JokeRepository]
   @override
-  Future<Either<Failure, Joke>> call(NoParams params) => repository.getRandomJoke();
+  Future<Either<Failure, Joke>> call(NoParams params) =>
+      repository.getRandomJoke();
 }
