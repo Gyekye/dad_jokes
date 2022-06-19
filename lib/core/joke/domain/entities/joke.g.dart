@@ -7,13 +7,11 @@ part of 'joke.dart';
 // **************************************************************************
 
 _$_Joke _$$_JokeFromJson(Map<String, dynamic> json) => _$_Joke(
-      status: json['status'] as String,
-      body: (json['body'] as List<dynamic>)
-          .map((e) => JokeBluePrint.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      icon_url: json['icon_url'] as String,
+      value: json['value'] as String,
     );
 
 Map<String, dynamic> _$$_JokeToJson(_$_Joke instance) => <String, dynamic>{
-      'status': instance.status,
-      'body': instance.body,
+      'icon_url': instance.icon_url,
+      'value': instance.value,
     };

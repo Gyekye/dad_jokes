@@ -6,5 +6,5 @@ class ApiKeys {
   /// API HOST
   static String host = 'dad-jokes.p.rapidapi.com';
   /// API ENDPOINT
-  static String url = 'https://dad-jokes.p.rapidapi.com/random/joke';
+  static String url = 'https://api.chucknorris.io/jokes/random';
 }

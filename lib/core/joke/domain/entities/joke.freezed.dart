@@ -20,8 +20,8 @@ Joke _$JokeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Joke {
-  String get status => throw _privateConstructorUsedError;
-  List<JokeBluePrint> get body => throw _privateConstructorUsedError;
+  String get icon_url => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -32,7 +32,7 @@ mixin _$Joke {
 abstract class $JokeCopyWith<$Res> {
   factory $JokeCopyWith(Joke value, $Res Function(Joke) then) =
       _$JokeCopyWithImpl<$Res>;
-  $Res call({String status, List<JokeBluePrint> body});
+  $Res call({String icon_url, String value});
 }
 
 /// @nodoc
@@ -45,18 +45,18 @@ class _$JokeCopyWithImpl<$Res> implements $JokeCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? status = freezed,
-    Object? body = freezed,
+    Object? icon_url = freezed,
+    Object? value = freezed,
   }) {
     return _then(_value.copyWith(
-      status: status == freezed
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      icon_url: icon_url == freezed
+          ? _value.icon_url
+          : icon_url // ignore: cast_nullable_to_non_nullable
               as String,
-      body: body == freezed
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as List<JokeBluePrint>,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -66,7 +66,7 @@ abstract class _$$_JokeCopyWith<$Res> implements $JokeCopyWith<$Res> {
   factory _$$_JokeCopyWith(_$_Joke value, $Res Function(_$_Joke) then) =
       __$$_JokeCopyWithImpl<$Res>;
   @override
-  $Res call({String status, List<JokeBluePrint> body});
+  $Res call({String icon_url, String value});
 }
 
 /// @nodoc
@@ -80,18 +80,18 @@ class __$$_JokeCopyWithImpl<$Res> extends _$JokeCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? status = freezed,
-    Object? body = freezed,
+    Object? icon_url = freezed,
+    Object? value = freezed,
   }) {
     return _then(_$_Joke(
-      status: status == freezed
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      icon_url: icon_url == freezed
+          ? _value.icon_url
+          : icon_url // ignore: cast_nullable_to_non_nullable
               as String,
-      body: body == freezed
-          ? _value._body
-          : body // ignore: cast_nullable_to_non_nullable
-              as List<JokeBluePrint>,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -99,23 +99,18 @@ class __$$_JokeCopyWithImpl<$Res> extends _$JokeCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Joke implements _Joke {
-  const _$_Joke({required this.status, required final List<JokeBluePrint> body})
-      : _body = body;
+  const _$_Joke({required this.icon_url, required this.value});
 
   factory _$_Joke.fromJson(Map<String, dynamic> json) => _$$_JokeFromJson(json);
 
   @override
-  final String status;
-  final List<JokeBluePrint> _body;
+  final String icon_url;
   @override
-  List<JokeBluePrint> get body {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_body);
-  }
+  final String value;
 
   @override
   String toString() {
-    return 'Joke(status: $status, body: $body)';
+    return 'Joke(icon_url: $icon_url, value: $value)';
   }
 
   @override
@@ -123,16 +118,16 @@ class _$_Joke implements _Joke {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Joke &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality().equals(other._body, _body));
+            const DeepCollectionEquality().equals(other.icon_url, icon_url) &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(_body));
+      const DeepCollectionEquality().hash(icon_url),
+      const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
@@ -147,15 +142,14 @@ class _$_Joke implements _Joke {
 
 abstract class _Joke implements Joke {
   const factory _Joke(
-      {required final String status,
-      required final List<JokeBluePrint> body}) = _$_Joke;
+      {required final String icon_url, required final String value}) = _$_Joke;
 
   factory _Joke.fromJson(Map<String, dynamic> json) = _$_Joke.fromJson;
 
   @override
-  String get status => throw _privateConstructorUsedError;
+  String get icon_url => throw _privateConstructorUsedError;
   @override
-  List<JokeBluePrint> get body => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_JokeCopyWith<_$_Joke> get copyWith => throw _privateConstructorUsedError;

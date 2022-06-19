@@ -7,20 +7,15 @@ import '../../../data/images.dart';
 class JokeCard extends StatelessWidget {
   const JokeCard({
     Key? key,
-    required this.setUp,
-    required this.punchLine,
-    required this.status,
-  })
-      : super(key: key);
+    required this.icon,
+    required this.value,
+  }) : super(key: key);
 
   /// Joke setup
-  final String setUp;
+  final String icon;
 
   /// Joke punchline
-  final String punchLine;
-
-  /// Joke status
-  final String status;
+  final String value;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +25,7 @@ class JokeCard extends StatelessWidget {
       /// background color of card
       color: Colors.transparent,
       child: Container(
+        margin: const EdgeInsets.all(20),
           padding: const EdgeInsets.all(20),
           width: double.infinity,
           decoration: BoxDecoration(
@@ -43,38 +39,27 @@ class JokeCard extends StatelessWidget {
                     Images.background,
                     size: Size(900, 450),
                   ))),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 30),
-                child: Text(setUp,
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .subtitle2!
-                      .apply(fontWeightDelta: 2,
-                      color: Colors.white,
-                      fontSizeDelta: 2),
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 30),
+                  child: Text(
+                    value,
+                    style: Theme.of(context).textTheme.subtitle2!.apply(
+                        fontWeightDelta: 2,
+                        color: Colors.white,
+                        fontSizeDelta: 2,
+                        fontSizeFactor: 1.5),
+                  ),
                 ),
-              ),
-              Text(
-                punchLine,
-                style: Theme
-                    .of(context)
-                    .textTheme
-                    .subtitle2!
-                    .apply(fontWeightDelta: 1, fontSizeDelta: 2),
-              ),
-               Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Chip(
-                  avatar: const Icon(Icons.check_circle_outline),
-                  label: Text(status),
-                  backgroundColor: Colors.green,
-                ),
-              )
-            ],
+                // CircleAvatar(
+                //   backgroundImage: NetworkImage(icon),
+                // )
+              ],
+            ),
           )),
     );
   }

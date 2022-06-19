@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dad_jokes/core/error/exception.dart';
+import 'package:flutter/foundation.dart';
 
 import '../../../data/api_keys.dart';
 import '../../domain/entities/joke.dart';
@@ -23,15 +24,12 @@ class JokeRemoteDatabaseImpl implements JokeRemoteDatabase {
   Future<Joke> getRandomJoke() async {
     final response = await client.get(
         Uri.parse(ApiKeys.url),
-        headers: {
-          'X-RapidAPI-Key': ApiKeys.dadJokes,
-          'X-RapidAPI-Host': ApiKeys.host
-        }
     );
     // Checks if response is 200
     // returns a random joke
     if (response.statusCode == 200) {
-      return Joke.fromJson(jsonDecode(response.body));
+      final result = Joke.fromJson(jsonDecode(response.body));
+      return result;
     } else {
       throw const DeviceException('Could not retrieve a joke');
     }
