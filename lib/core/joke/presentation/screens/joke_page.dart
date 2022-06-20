@@ -33,7 +33,7 @@ class _JokePageState extends State<JokePage> {
       ),
       body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ValueListenableBuilder(
@@ -42,12 +42,9 @@ class _JokePageState extends State<JokePage> {
                   return FutureBuilder<Joke>(
                       future: bloc.randomJoke(),
                       builder: (BuildContext context, snapshot) {
-                        if (kDebugMode) {
-                          print(value);
-                        }
                         if (buttonPressed.value == value ) {
                           if (snapshot.hasData) {
-                            const Duration(seconds: 200);
+                            const Duration(seconds: 20);
                             return JokeCard(
                               icon: snapshot.requireData.icon_url,
                               value: snapshot.requireData.value,
@@ -67,11 +64,11 @@ class _JokePageState extends State<JokePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton.large(
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
           buttonPressed.value = !buttonPressed.value;
         },
-        child: const Icon(Icons.lock_reset_outlined),
+        label: const Icon(Icons.casino_outlined),
       ),
     );
   }

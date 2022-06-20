@@ -18,7 +18,7 @@ void initJoke() {
     /// register bloc
     ..registerFactory(() => JokeBloc(getRandomJoke: sl()))
 
-    /// register usecases
+    /// register usecase
     ..registerLazySingleton(() => GetRandomJoke(sl()))
 
     /// register repository

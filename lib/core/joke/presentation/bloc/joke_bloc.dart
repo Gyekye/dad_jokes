@@ -1,6 +1,4 @@
-import 'package:dad_jokes/core/error/failure.dart';
 import 'package:dad_jokes/core/usecase/base_usecase.dart';
-import 'package:flutter/foundation.dart';
 
 import '../../domain/entities/joke.dart';
 import '../../domain/usecase/random_joke.dart';

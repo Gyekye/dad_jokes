@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:dad_jokes/core/error/exception.dart';
-import 'package:flutter/foundation.dart';
 
 import '../../../data/api_keys.dart';
 import '../../domain/entities/joke.dart';

@@ -25,7 +25,7 @@ class JokeCard extends StatelessWidget {
       /// background color of card
       color: Colors.transparent,
       child: Container(
-        margin: const EdgeInsets.all(20),
+        margin: const EdgeInsets.all(10),
           padding: const EdgeInsets.all(20),
           width: double.infinity,
           decoration: BoxDecoration(
@@ -49,10 +49,10 @@ class JokeCard extends StatelessWidget {
                   child: Text(
                     value,
                     style: Theme.of(context).textTheme.subtitle2!.apply(
-                        fontWeightDelta: 2,
+                        fontWeightDelta: 1,
                         color: Colors.white,
-                        fontSizeDelta: 2,
-                        fontSizeFactor: 1.5),
+                        fontSizeDelta: 1.5,
+                        fontSizeFactor: 1.2),
                   ),
                 ),
                 // CircleAvatar(
